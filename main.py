@@ -2,9 +2,9 @@ from fitness_tracker import Training, Swimming, Running, SportsWalking
 
 
 def _common_data_for_training():
-    input_data = [float(input('Расстояние: ')),
-                  float(input('Продолжительность: ')),
-                  float(input('Ваш вес: '))]
+    input_data = [int(input('Количество движений: ')),
+                  float(input('Продолжительность, ч: ')),
+                  float(input('Ваш вес, кг: '))]
     return input_data
 
 
@@ -19,7 +19,7 @@ def data_for_sport_walking():
 
     common_data = _common_data_for_training()
 
-    input_data = [float(input('Высота подъема: '))]
+    input_data = [float(input('Высота подъема, км: '))]
 
     return common_data + input_data
 
@@ -29,8 +29,8 @@ def data_for_swimming():
 
     common_data = _common_data_for_training()
 
-    input_data = [float(input('Длина бассейна: ')),
-                  float(input('Кол-во бассейнов которых проплыл: '))]
+    input_data = [float(input('Длина бассейна, м: ')),
+                  float(input('Кол-во проплытых бассейнов: '))]
 
     return common_data + input_data
 
@@ -100,13 +100,3 @@ if __name__ == '__main__':
             main(training)
 
             status = False
-
-        # packages = [
-        #     ('SWM', [720, 1, 80, 25, 40]),
-        #     ('RUN', [15000, 1, 75]),
-        #     ('WLK', [9000, 1, 75, 180]),
-        # ]
-
-        # for workout_type, data in packages:
-        #     training = read_package(workout_type, data)
-        #     main(training)

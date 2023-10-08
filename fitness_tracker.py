@@ -56,6 +56,16 @@ class Training:
             'В родительском классе эта функция ничего не возвращает'
         )
 
+    def get_action(self):
+        return self._action
+
+    def set_action(self, value):
+        if self.action < 0:
+            raise ValueError('Значение расстояния должно быть положительным числом!')
+        self._action = value
+
+    # weight = property(get_action, set_action)
+
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
 
